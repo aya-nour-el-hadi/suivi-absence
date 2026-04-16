@@ -1,10 +1,15 @@
 @extends('layouts.app')
 
 @section('content')
-
+<style>
+    body{
+    margin:0;
+    background:#ffffff; 
+    font-family: system-ui, -apple-system, Segoe UI, sans-serif;
+}
+</style>
 <div style="
     min-height:100vh;
-    background:#f8fafc;
     display:flex;
     align-items:center;
     justify-content:center;
@@ -25,23 +30,7 @@
                     Ajouter Sanction
                 </h1>
 
-                <p style="
-                    color:#64748b;
-                    margin-top:10px;
-                    max-width:420px;
-                ">
-                    Gérez les sanctions des stagiaires de manière claire, rapide et organisée.
-                </p>
-
-                <div style="
-                    margin-top:20px;
-                    color:#64748b;
-                    font-size:14px;
-                ">
-                    <p>✔ Suivi des sanctions simplifié</p>
-                    <p>✔ Gestion claire des décisions</p>
-                    <p>✔ Interface professionnelle</p>
-                </div>
+         
 
             </div>
 

@@ -1,10 +1,15 @@
 @extends('layouts.app')
 
 @section('content')
-
+<style>
+    body{
+    margin:0;
+    background:#ffffff; 
+    font-family: system-ui, -apple-system, Segoe UI, sans-serif;
+}
+</style>
 <div style="
     min-height:100vh;
-    background:#f8fafc;
     display:flex;
     align-items:center;
     justify-content:center;
@@ -25,23 +30,7 @@
                     Ajouter Absence
                 </h1>
 
-                <p style="
-                    color:#64748b;
-                    margin-top:10px;
-                    max-width:420px;
-                ">
-                    Gérez facilement les absences et retards des stagiaires avec une interface simple et moderne.
-                </p>
-
-                <div style="
-                    margin-top:20px;
-                    color:#64748b;
-                    font-size:14px;
-                ">
-                    <p>✔ Suivi rapide des absences</p>
-                    <p>✔ Gestion claire et organisée</p>
-                    <p>✔ Interface simple et efficace</p>
-                </div>
+ 
 
             </div>
 

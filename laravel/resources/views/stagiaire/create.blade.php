@@ -2,9 +2,15 @@
 
 @section('content')
 
+<style>
+    body{
+    margin:0;
+    background:#ffffff; 
+    font-family: system-ui, -apple-system, Segoe UI, sans-serif;
+}
+</style>
 <div style="
     min-height:100vh;
-    background:#f8fafc;
     display:flex;
     align-items:center;
     justify-content:center;
@@ -25,23 +31,6 @@
                     Ajouter Stagiaire
                 </h1>
 
-                <p style="
-                    color:#64748b;
-                    margin-top:10px;
-                    max-width:420px;
-                ">
-                    Gérez vos stagiaires avec une interface simple, rapide et moderne.
-                </p>
-
-                <div style="
-                    margin-top:20px;
-                    color:#64748b;
-                    font-size:14px;
-                ">
-                    <p>✔ Interface claire et moderne</p>
-                    <p>✔ Gestion facile des données</p>
-                    <p>✔ Expérience utilisateur fluide</p>
-                </div>
 
             </div>
 

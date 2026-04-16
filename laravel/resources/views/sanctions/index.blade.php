@@ -182,13 +182,14 @@ body {
 
     <!-- TITLE -->
     <div class="p-4 mb-4 card-soft">
-        <h4 class="fw-bold mb-1"> Tableau des Sanctions</h4>
+        <h4 class="fw-bold mb-1"><i data-lucide="alert-triangle"></i>Tableau des Sanctions</h4>
     </div>
 
     <!-- FILTER -->
     <div class="card-soft mb-4">
 
         <div class="card-header-soft">
+            <i data-lucide="search"></i>
              Recherche des sanctions
         </div>
 
@@ -237,13 +238,13 @@ body {
                     <div class="col-12 d-flex justify-content-end gap-2">
 
                     <button type="submit" class="animated-button btn-blue">
-                        <i class="bi bi-search"></i>
+                        <i data-lucide="search"></i>
                         <span>Rechercher</span>
                     </button>
 
                         <a href="{{ route('sanction.index') }}"
                         class="animated-button btn-orange">
-                        <i class="bi bi-arrow-clockwise"></i>
+                        <i data-lucide="refresh-ccw"></i>
                         <span>Reset</span>
                     </a>
 
@@ -319,7 +320,7 @@ body {
                         <td class="d-flex gap-2">
 
                             <a href="{{ route('sanction.edit', $s->id) }}"class="animated-button btn-green">
-                                <i class="bi bi-pencil"></i>
+                                 <i data-lucide="edit-3"></i>
                                 <span>Edit</span>
                             </a>
                             </td>
@@ -332,7 +333,7 @@ body {
                                 @method('DELETE')
 
                                 <button class="animated-button btn-red">
-                                    <i class="bi bi-trash"></i>
+                                    <i data-lucide="trash-2"></i>
                                     <span>Delete</span>
                                 </button>
 

@@ -3,6 +3,7 @@ use App\Http\Controllers\AbsenceController;
 use App\Http\Controllers\CEFController;
 use App\Http\Controllers\SanctionController;
 use App\Http\Controllers\StagiaireController;
+use App\Http\Controllers\DashboardController;
 use Illuminate\Support\Facades\Route;
 
     Route::get('/stagiaires', [StagiaireController::class, 'index'])->name('stagiaire.index');
@@ -22,7 +23,7 @@ use Illuminate\Support\Facades\Route;
     Route::get('/cefs', [CEFController::class, 'index'])->name('CEF.index');
     Route::put('/cefs/{cef}', [CEFController::class, 'update'])->name('CEF.update');
     
-/* SANCTIONS */
+
 
 Route::get('/sanctions', [SanctionController::class, 'index'])->name('sanction.index');
 
@@ -36,4 +37,4 @@ Route::put('/sanctions/{sanction}', [SanctionController::class, 'update'])->name
 
 Route::delete('/sanctions/{sanction}', [SanctionController::class, 'destroy'])->name('sanction.destroy');
     
-    // Route::get('/dashboard', [DashboardController::class, 'index']);
+Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard.index');

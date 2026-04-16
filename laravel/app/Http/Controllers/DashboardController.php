@@ -23,7 +23,7 @@ class DashboardController extends Controller
             ->take(5)
             ->get();
 
-        return view('dashboard', compact(
+        return view('Dashboard', compact(
             'totalStagiaires',
             'totalAbsences',
             'totalRetards',
