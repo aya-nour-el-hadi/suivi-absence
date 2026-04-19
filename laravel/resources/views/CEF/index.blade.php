@@ -2,109 +2,217 @@
 
 @section('content')
 
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+
 <style>
+
+/* ================= BODY ================= */
 body{
-       background: #ffffff;
-    font-family: "Segoe UI", sans-serif;
+    background:#ffffff;
+    font-family:"Segoe UI", sans-serif;
 }
 
-/* CARD */
-.card-soft{
-    background:#fff;
-    border:1px solid #e5e7eb;
-    border-radius:18px;
-    box-shadow:0 6px 16px rgba(0,0,0,0.04);
-    overflow:hidden;
+/* PAGE */
+.wrapper{
+    padding:25px;
 }
 
 /* HEADER */
-.card-header-soft{
-    background:#f9fafb;
-    border-bottom:1px solid #e5e7eb;
-    padding:14px 18px;
-    font-weight:600;
+.header{
+    background:#ffffff;
+    border:1px solid #e5e7eb;
+    border-radius:16px;
+    padding:18px;
+    margin-bottom:15px;
+}
+
+.header h2{
+    margin:0;
+    font-size:20px;
+    font-weight:700;
     color:#111827;
 }
 
-/* BADGES */
-.badge-soft-blue{
-    background:#e0f2fe;
-    color:#0369a1;
-    border-radius:10px;
-    padding:6px 10px;
+.header p{
+    margin:4px 0 0;
+    font-size:13px;
+    color:#6b7280;
 }
 
-.badge-soft-red{
-    background:#fee2e2;
-    color:#b91c1c;
-    border-radius:10px;
-    padding:6px 10px;
+/* ================= FILTER BAR ================= */
+.filter-bar{
+    display:flex;
+    justify-content:space-between;
+    gap:12px;
+    flex-wrap:wrap;
+    margin-bottom:15px;
 }
 
-.badge-soft-yellow{
-    background:#fef3c7;
-    color:#92400e;
-    border-radius:10px;
-    padding:6px 10px;
+/* SEARCH */
+.search-box{
+    flex:1;
+    min-width:240px;
+    display:flex;
+    align-items:center;
+    gap:10px;
+    background:#fff;
+    border:1px solid #e5e7eb;
+    border-radius:12px;
+    padding:10px 12px;
+    box-shadow:0 4px 12px rgba(0,0,0,0.03);
 }
 
-.badge-soft-green{
-    background:#dcfce7;
-    color:#166534;
-    border-radius:10px;
-    padding:6px 10px;
+.search-box i{
+    color:#9ca3af;
+    font-size:14px;
+}
+
+.search-box input{
+    border:none;
+    outline:none;
+    width:100%;
+    font-size:14px;
+}
+
+/* FILTER */
+.select-box{
+    padding:10px 12px;
+    border-radius:12px;
+    border:1px solid #e5e7eb;
+    background:#fff;
+    font-size:14px;
+    box-shadow:0 4px 12px rgba(0,0,0,0.03);
+}
+
+/* ================= TABLE ================= */
+.card{
+    background:#fff;
+    border:1px solid #e5e7eb;
+    border-radius:16px;
+    overflow:hidden;
+}
+
+.card-header{
+    display:flex;
+    justify-content:space-between;
+    padding:14px 18px;
+    background:#fafafa;
+    border-bottom:1px solid #e5e7eb;
+    font-weight:600;
+    font-size:14px;
 }
 
 /* TABLE */
-.table thead{
-    background:#f8fafc;
+table{
+    width:100%;
+    border-collapse:collapse;
 }
 
-.table tbody tr:hover{
-    background:#f1f5f9;
+thead{
+    background:#f9fafb;
+}
+
+th{
+    text-align:left;
+    font-size:13px;
+    padding:12px;
+    color:#374151;
+}
+
+td{
+    padding:12px;
+    font-size:13px;
+    color:#111827;
+    border-top:1px solid #f3f4f6;
+}
+
+/* ROW */
+tbody tr:hover{
+    background:#f9fafb;
+}
+
+/* ================= BADGES ================= */
+.badge{
+    padding:5px 10px;
+    border-radius:999px;
+    font-size:12px;
+    font-weight:600;
+}
+
+.green{background:#dcfce7;color:#166534;}
+.red{background:#fee2e2;color:#b91c1c;}
+.yellow{background:#fef3c7;color:#92400e;}
+.blue{background:#dbeafe;color:#1e40af;}
+
+/* BUTTON */
+button{
+    background:#2563eb;
+    color:white;
+    border:none;
+    padding:7px 10px;
+    border-radius:10px;
+    font-size:12px;
+    cursor:pointer;
     transition:0.2s;
 }
 
-/* FORM SELECT */
-.form-select-sm{
+button:hover{
+    background:#1d4ed8;
+}
+
+/* SELECT */
+select{
+    padding:7px 10px;
     border-radius:10px;
     border:1px solid #e5e7eb;
+    font-size:12px;
 }
 
-/* BUTTON */
-.btn-soft-primary{
-    background:#6366f1;
-    color:#fff;
-    border-radius:10px;
-    padding:6px 12px;
-    border:none;
-    font-size:13px;
+/* RESPONSIVE */
+@media(max-width:768px){
+    .filter-bar{
+        flex-direction:column;
+    }
 }
 
-.btn-soft-primary:hover{
-    background:#4f46e5;
-}
 </style>
 
-<div class="container py-4">
+<div class="wrapper">
 
-    <!-- TITLE -->
-    <div class="p-4 mb-4 card-soft">
-        <h4 class="fw-bold mb-1"> Tableau CEF</h4>
-   
+    <!-- HEADER -->
+    <div class="header">
+        <h2>CEF Dashboard</h2>
+        <p>Gestion des stagiaires, absences, retards et évaluations</p>
     </div>
 
-    <!-- TABLE CARD -->
-    <div class="card-soft">
+    <!-- FILTER -->
+    <div class="filter-bar">
 
-        <div class="card-header-soft d-flex justify-content-between">
-            <span> Liste des CEF</span>
-            <span class="text-muted">Total: {{ count($cef) }}</span>
+        <div class="search-box">
+            <i class="bi bi-search"></i>
+            <input type="text" id="searchInput" placeholder="Search Nom ou Prénom...">
+        </div>
+
+        <select class="select-box" id="filterSelect">
+            <option value="all">All Evaluations</option>
+            <option value="très bien">Très bien</option>
+            <option value="bien">Bien</option>
+            <option value="intermédiaire">Intermédiaire</option>
+        </select>
+
+    </div>
+
+    <!-- TABLE -->
+    <div class="card">
+
+        <div class="card-header">
+            <span>Liste des CEF</span>
+            <span>Total: {{ count($cef) }}</span>
         </div>
 
         <div class="table-responsive">
 
-            <table class="table align-middle mb-0">
+            <table id="cefTable">
 
                 <thead>
                     <tr>
@@ -122,73 +230,60 @@ body{
 
                 <tbody>
 
-                    @foreach ($cef as $s)
-                    <tr>
+                @foreach($cef as $s)
+                <tr>
 
-                        <td class="text-muted">#{{ $s->id }}</td>
+                    <td>#{{ $s->id }}</td>
+                    <td>{{ $s->stagiaire->Nom }}</td>
+                    <td>{{ $s->stagiaire->prénom }}</td>
 
-                        <td class="fw-semibold">{{ $s->stagiaire->Nom }}</td>
-                        <td>{{ $s->stagiaire->prénom }}</td>
+                    <td><span class="badge red">{{ $s->stagiaire->absences->where('type','Absence')->count() }}</span></td>
 
-                        <td>
-                            <span class="badge-soft-red">
-                                {{ $s->stagiaire->absences->where('type','Absence')->count() }}
-                            </span>
-                        </td>
+                    <td><span class="badge yellow">{{ $s->stagiaire->absences->where('type','Retard')->count() }}</span></td>
 
-                        <td>
-                            <span class="badge-soft-yellow">
-                                {{ $s->stagiaire->absences->where('type','Retard')->count() }}
-                            </span>
-                        </td>
+                    <td>{{ $s->sanction }}</td>
 
-                        <td class="text-muted">
-                            {{ $s->sanction }}
-                        </td>
+                    <td class="eval">
+                        @if($s->evaluation_final=='Très bien')
+                            <span class="badge green">Très bien</span>
+                        @elseif($s->evaluation_final=='Bien')
+                            <span class="badge blue">Bien</span>
+                        @else
+                            <span class="badge yellow">Intermédiaire</span>
+                        @endif
+                    </td>
 
-                        <td>
-                            @if($s->evaluation_final == 'Très bien')
-                                <span class="badge-soft-green">Très bien</span>
-                            @elseif($s->evaluation_final == 'Bien')
-                                <span class="badge-soft-blue">Bien</span>
-                            @else
-                                <span class="badge-soft-yellow">Intermédiaire</span>
-                            @endif
-                        </td>
+                    <td>
+                        @if($s->signature=='Oui')
+                            <span class="badge green">Oui</span>
+                        @else
+                            <span class="badge red">Non</span>
+                        @endif
+                    </td>
 
-                        <td>
-                            @if($s->signature == 'Oui')
-                                <span class="badge-soft-green">Oui</span>
-                            @else
-                                <span class="badge-soft-red">Non</span>
-                            @endif
-                        </td>
+                    <td>
+                        <form action="{{ route('CEF.update',$s->id) }}" method="POST" class="d-flex gap-2">
+                            @csrf
+                            @method('PUT')
 
-                        <td>
-                            <form action="{{ route('CEF.update',$s->id) }}" method="POST" class="d-flex gap-2">
-                                @csrf
-                                @method('PUT')
+                            <select name="evaluation_final" required>
+                                <option>Très bien</option>
+                                <option>Bien</option>
+                                <option>Intermédiaire</option>
+                            </select>
 
-                                <select name="evaluation_final" class="form-select form-select-sm">
-                                    <option value="Très bien">Très bien</option>
-                                    <option value="Bien">Bien</option>
-                                    <option value="Intermédiaire">Intermédiaire</option>
-                                </select>
+                            <select name="signature" required>
+                                <option>Oui</option>
+                                <option>Non</option>
+                            </select>
 
-                                <select name="signature" class="form-select form-select-sm">
-                                    <option value="Oui">Oui</option>
-                                    <option value="Non">Non</option>
-                                </select>
+                            <button>Save</button>
 
-                                <button class="btn-soft-primary">
-                                    Save
-                                </button>
+                        </form>
+                    </td>
 
-                            </form>
-                        </td>
-
-                    </tr>
-                    @endforeach
+                </tr>
+                @endforeach
 
                 </tbody>
 
@@ -199,5 +294,36 @@ body{
     </div>
 
 </div>
+
+<!-- FILTER JS -->
+<script>
+
+const searchInput = document.getElementById("searchInput");
+const filterSelect = document.getElementById("filterSelect");
+const table = document.getElementById("cefTable");
+
+searchInput.addEventListener("input", function(){
+    let value = this.value.toLowerCase();
+
+    [...table.rows].forEach((row,i)=>{
+        if(i===0) return;
+        row.style.display = row.innerText.toLowerCase().includes(value) ? "" : "none";
+    });
+});
+
+filterSelect.addEventListener("change", function(){
+    let value = this.value.toLowerCase();
+
+    [...table.rows].forEach((row,i)=>{
+        if(i===0) return;
+
+        let evalText = row.querySelector(".eval")?.innerText.toLowerCase() || "";
+
+        row.style.display =
+            value === "all" || evalText.includes(value) ? "" : "none";
+    });
+});
+
+</script>
 
 @endsection

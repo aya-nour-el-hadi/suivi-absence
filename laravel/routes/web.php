@@ -37,4 +37,4 @@ Route::put('/sanctions/{sanction}', [SanctionController::class, 'update'])->name
 
 Route::delete('/sanctions/{sanction}', [SanctionController::class, 'destroy'])->name('sanction.destroy');
     
-Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard.index');
+Route::get('/', [DashboardController::class, 'index'])->name('dashboard.index');

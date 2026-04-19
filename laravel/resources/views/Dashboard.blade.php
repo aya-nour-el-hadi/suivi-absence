@@ -5,19 +5,18 @@
 <script src="https://unpkg.com/lucide@latest"></script>
 
 <style>
+    
 body{
-    margin:0;
+   
     font-family: system-ui, -apple-system, Segoe UI, sans-serif;
     background:white;
     color:#0f172a;
 }
 
-/* PAGE */
 .page{
-    padding:50px;
-    max-width:1200px;
-    margin:auto;
+    padding:25px;
 }
+
 
 /* ================= HEADER ================= */
 .header{
