@@ -21,23 +21,18 @@ public function index()
         $lastSanction = $s->sanctions->sortByDesc('date')->first();
         $sanctionFinal = $lastSanction ? $lastSanction->type_sanction : 'Normal';
 
-        // ❌ STOP ANY UPDATE (TEST ONLY)
-        $cef = Cef::firstOrCreate(
+        Cef::updateOrCreate(
             ['stagiaire_id' => $s->id],
             [
-                'evaluation_final' => 'Intermédiaire',
+                'evaluation_final' => $evaluation ?? 'Intermédiaire',
                 'signature' => 'Non',
+
+                'total_abssance' => $totalAbsence,
+                'total_retard' => $totalRetard,
+
+                'sanction' => $sanctionFinal, 
             ]
         );
-
-        // ❌ COMMENT THIS TEMPORARILY
-        /*
-        $cef->update([
-            'total_absence' => $totalAbsence,
-            'total_retard' => $totalRetard,
-            'sanction' => $sanctionFinal,
-        ]);
-        */
     }
 
     $cef = Cef::with('stagiaire')->get();

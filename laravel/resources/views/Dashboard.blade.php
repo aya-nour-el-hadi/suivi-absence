@@ -18,7 +18,6 @@ body{
 }
 
 
-/* ================= HEADER ================= */
 .header{
     display:flex;
     justify-content:space-between;
@@ -39,7 +38,7 @@ body{
     color:#6b7280;
 }
 
-/* LIVE BADGE */
+
 .header-badge{
     display:flex;
     align-items:center;
@@ -58,7 +57,7 @@ body{
     height:16px;
 }
 
-/* ================= KPI ================= */
+
 .kpis{
     display:grid;
     grid-template-columns:repeat(4,1fr);
@@ -82,7 +81,7 @@ body{
     box-shadow:0 10px 25px rgba(0,0,0,0.05);
 }
 
-/* ICON SOFT */
+
 .icon-soft{
     width:48px;
     height:48px;
@@ -93,13 +92,13 @@ body{
     box-shadow:0 8px 18px rgba(0,0,0,0.05);
 }
 
-/* COLORS */
+
 .icon-soft.blue{ background:#e8f1ff; color:#3b82f6; }
 .icon-soft.red{ background:#ffe8ea; color:#ef4444; }
 .icon-soft.yellow{ background:#fff6db; color:#f59e0b; }
 .icon-soft.purple{ background:#f3e8ff; color:#7c3aed; }
 
-/* TEXT */
+
 .kpi span{
     font-size:12px;
     color:#6b7280;
@@ -111,7 +110,7 @@ body{
     font-weight:700;
 }
 
-/* ================= LAYOUT ================= */
+
 .layout{
     display:grid;
     grid-template-columns:2fr 1fr;
@@ -119,7 +118,7 @@ body{
     margin-top:30px;
 }
 
-/* PANEL */
+
 .panel{
     background:#fff;
     border:1px solid #e5e7eb;
@@ -127,7 +126,7 @@ body{
     padding:20px;
 }
 
-/* PANEL HEAD */
+
 .panel-head{
     display:flex;
     gap:10px;
@@ -146,7 +145,7 @@ body{
     color:#6b7280;
 }
 
-/* LIST */
+
 .list{
     margin-top:25px;
 }
@@ -159,14 +158,13 @@ body{
     padding:12px 0;
 }
 
-/* LABEL */
 .item span{
     font-size:13px;
     font-weight:500;
     color:#374151;
 }
 
-/* TRACK */
+
 .track{
     height:8px;
     background:#e5e7eb;
@@ -174,7 +172,6 @@ body{
     overflow:hidden;
 }
 
-/* FILL SOFT */
 .fill{
     height:100%;
     border-radius:999px;
@@ -185,14 +182,12 @@ body{
 .yellow{ background:#fcd34d; }
 .purple{ background:#c4b5fd; }
 
-/* NUMBER */
 .item b{
     font-size:13px;
     font-weight:600;
     color:#111827;
 }
 
-/* ================= SIDE ================= */
 .side{
     display:flex;
     flex-direction:column;
@@ -242,7 +237,7 @@ body{
     color:#6b7280;
 }
 
-/* RESPONSIVE */
+
 @media(max-width:900px){
     .kpis{
         grid-template-columns:repeat(2,1fr);
@@ -322,54 +317,47 @@ body{
     {{-- MAIN --}}
     <div class="layout">
 
-        {{-- LEFT --}}
-        <div class="panel">
+{{-- LEFT --}}
+<div class="panel">
 
-            <div class="panel-head">
-                <i data-lucide="activity"></i>
-                <div>
-                    <h3>Activity Overview</h3>
-                    <p>Soft analytics distribution</p>
-                </div>
+    <div class="panel-head">
+        <i data-lucide="sparkles"></i>
+        <h3>Quick Insights</h3>
+    </div>
+
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:18px;">
+
+        <div style="padding:14px;border:1px solid #eef2f7;border-radius:14px;">
+            <div style="font-size:12px;color:#64748b;">Absence Rate</div>
+            <div style="font-size:20px;font-weight:800;color:#ef4444;">
+                {{ $totalStagiaires > 0 ? round(($totalAbsences/$totalStagiaires)*100,1) : 0 }}%
             </div>
-
-            <div class="list">
-
-                <div class="item">
-                    <span>Stagiaires</span>
-                    <div class="track">
-                        <div class="fill blue" style="width:100%"></div>
-                    </div>
-                    <b>{{ $totalStagiaires }}</b>
-                </div>
-
-                <div class="item">
-                    <span>Absences</span>
-                    <div class="track">
-                        <div class="fill red" style="width:70%"></div>
-                    </div>
-                    <b>{{ $totalAbsences }}</b>
-                </div>
-
-                <div class="item">
-                    <span>Retards</span>
-                    <div class="track">
-                        <div class="fill yellow" style="width:45%"></div>
-                    </div>
-                    <b>{{ $totalRetards }}</b>
-                </div>
-
-                <div class="item">
-                    <span>Sanctions</span>
-                    <div class="track">
-                        <div class="fill purple" style="width:30%"></div>
-                    </div>
-                    <b>{{ $totalSanctions }}</b>
-                </div>
-
-            </div>
-
         </div>
+
+        <div style="padding:14px;border:1px solid #eef2f7;border-radius:14px;">
+            <div style="font-size:12px;color:#64748b;">Delay Rate</div>
+            <div style="font-size:20px;font-weight:800;color:#f59e0b;">
+                {{ $totalStagiaires > 0 ? round(($totalRetards/$totalStagiaires)*100,1) : 0 }}%
+            </div>
+        </div>
+
+        <div style="padding:14px;border:1px solid #eef2f7;border-radius:14px;">
+            <div style="font-size:12px;color:#64748b;">Discipline Score</div>
+            <div style="font-size:20px;font-weight:800;color:#3b82f6;">
+                {{ 100 - (($totalAbsences + $totalRetards) / max($totalStagiaires,1) * 10) }}%
+            </div>
+        </div>
+
+        <div style="padding:14px;border:1px solid #eef2f7;border-radius:14px;">
+            <div style="font-size:12px;color:#64748b;">Total Events</div>
+            <div style="font-size:20px;font-weight:800;color:#7c3aed;">
+                {{ $totalAbsences + $totalRetards + $totalSanctions }}
+            </div>
+        </div>
+
+    </div>
+
+</div>
 
         {{-- RIGHT --}}
         <div class="side">
