@@ -332,7 +332,7 @@ body {
                                 @csrf
                                 @method('DELETE')
 
-                                <button class="animated-button btn-red">
+                                <button class="animated-button btn-red" onsubmit="return confirm('supprimer ?')">
                                     <i data-lucide="trash-2"></i>
                                     <span>Delete</span>
                                 </button>

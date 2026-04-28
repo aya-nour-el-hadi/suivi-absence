@@ -185,7 +185,7 @@ body {
                     </td>
 
                     <td>
-                        <form action="{{ route('stagiaire.destroy', $s->id) }}" method="POST">
+                        <form action="{{ route('stagiaire.destroy', $s->id) }}" method="POST" onsubmit="return confirm('supprimer ?')">
                             @csrf
                             @method('DELETE')
 

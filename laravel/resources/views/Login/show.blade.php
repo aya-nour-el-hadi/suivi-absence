@@ -11,70 +11,70 @@
 <style>
 
 body {
-    background: #f5f9ff; /* light white-blue background */
+    background: white;
 }
 
-/* CARD */
-.login-card {
-    width: 380px;
-    border: none;
-    border-radius: 16px;
-    background: #ffffff;
-    box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+/* MAIN BOX */
+.login-box {
+    max-width: 1000px;
+    background: #fff;
+    border-radius: 20px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+    overflow: hidden;
 }
 
-/* TITLE */
-.title {
-    font-weight: 700;
-    color: #1f3b57;
+/* LEFT SIDE */
+.left-side {
+    background:white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
 }
 
-/* INPUT WRAPPER */
+.left-side img {
+    max-width: 100%;
+}
+
+/* RIGHT SIDE */
+.right-side {
+    padding: 40px;
+}
+
+/* INPUT */
 .input-wrapper {
     position: relative;
 }
 
-/* ICON */
 .input-icon {
     position: absolute;
     left: 12px;
     top: 50%;
     transform: translateY(-50%);
-    color: #3b82f6; /* blue */
+    color: #3b82f6;
 }
 
-/* INPUT */
 .form-control {
     border-radius: 12px;
     padding-left: 40px;
     border: 1px solid #dbe7ff;
     background-color: #f8fbff;
-    transition: 0.2s;
 }
 
-/* FOCUS */
 .form-control:focus {
     border-color: #3b82f6;
     box-shadow: 0 0 0 0.2rem rgba(59,130,246,0.15);
-    background: #fff;
 }
 
-/* BUTTON */
+
 .btn-primary {
     border-radius: 12px;
-    padding: 10px;
-    font-weight: 600;
     background: #3b82f6;
     border: none;
 }
 
 .btn-primary:hover {
     background: #2563eb;
-}
-
-/* TEXT LINK */
-a {
-    color: #3b82f6;
 }
 
 </style>
@@ -84,40 +84,43 @@ a {
 
 <div class="container d-flex justify-content-center align-items-center vh-100">
 
-    <div class="card login-card p-4">
+    <div class="row login-box w-100">
 
-        <div class="text-center mb-4">
-            <h3 class="title">Welcome Back</h3>
-            <p class="text-muted small">Login to your account</p>
+        <!-- LEFT IMAGE -->
+        <div class="col-md-6 left-side">
+            <img src="{{ asset('images/shedule.png') }}" alt="">
         </div>
 
-        <form action="{{ route('login') }}" method="post">
-            @csrf
+        <!-- RIGHT FORM -->
+        <div class="col-md-6 right-side">
 
-            <!-- EMAIL -->
-            <div class="mb-3 input-wrapper">
-                <i class="bi bi-envelope input-icon"></i>
-                <input type="email" name="email" class="form-control" placeholder="Email address" required>
-            </div>
+            <h3 class="mb-2">Welcome Back</h3>
+            <p class="text-muted mb-4">Login to your account</p>
 
-            <!-- PASSWORD -->
-            <div class="mb-3 input-wrapper">
-                <i class="bi bi-lock input-icon"></i>
-                <input type="password" name="password" class="form-control" placeholder="Password" required>
-            </div>
+            <form action="{{ route('login') }}" method="post">
+                @csrf
 
-            <!-- BUTTON -->
-            <button type="submit" class="btn btn-primary w-100">
-                Login
-            </button>
+                <div class="mb-3 input-wrapper">
+                    <i class="bi bi-envelope input-icon"></i>
+                    <input type="email" name="email" class="form-control" placeholder="Email address" required>
+                </div>
 
-        </form>
+                <div class="mb-3 input-wrapper">
+                    <i class="bi bi-lock input-icon"></i>
+                    <input type="password" name="password" class="form-control" placeholder="Password" required>
+                </div>
+
+                <button type="submit" class="btn btn-primary w-100">
+                    Login
+                </button>
+
+            </form>
+
+        </div>
 
     </div>
 
 </div>
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
 </html>

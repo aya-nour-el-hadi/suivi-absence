@@ -24,9 +24,6 @@ public function index()
         Cef::updateOrCreate(
             ['stagiaire_id' => $s->id],
             [
-                'evaluation_final' => $evaluation ?? 'Intermédiaire',
-                'signature' => 'Non',
-
                 'total_abssance' => $totalAbsence,
                 'total_retard' => $totalRetard,
 
@@ -40,17 +37,10 @@ public function index()
     return view('CEF.index', compact('cef'));
 }
 
-public function update(Cef $cef, Request $request)
+public function update(Cef $cef, CEFRequest $cEFRequest)
 {
-    $request->validate([
-        'evaluation_final' => 'required|string|in:Très bien,Bien,Intermédiaire',
-        'signature' => 'required|string|in:Oui,Non',
-    ]);
-
-    $cef->update([
-        'evaluation_final' => $request->evaluation_final,
-        'signature' => $request->signature,
-    ]);
+    $validate = $cEFRequest->validated();
+    $cef->fill($validate)->save();
 
     return redirect()->route('CEF.index');
 }
