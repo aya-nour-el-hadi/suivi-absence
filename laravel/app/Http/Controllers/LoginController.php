@@ -22,7 +22,7 @@ class LoginController extends Controller
 
             if(Auth()->user()->role == 'admin')
                 {
-                    return redirect()->route('dashboard.index');
+                    return redirect()->route('admin.dashboard');
                 }
             else{
                     return redirect()->route('login.show');
@@ -31,6 +31,14 @@ class LoginController extends Controller
         else{
             return to_route('login.show');
         }
+    }
+
+    public function logout(Request $request)
+    {
+        Auth::logout();
+        $request->session()->flush();
+
+        return redirect()->route('login.show')->with('success','vous étes bien Déconnecté.');
     }
 }
         

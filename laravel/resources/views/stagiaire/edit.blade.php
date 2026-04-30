@@ -118,7 +118,7 @@ body{
                         </div>
                     @endif
 
-                    <form action="{{ route('stagiaire.update',$stagiaire->id) }}" method="post">
+                    <form action="{{ route('stagiaires.update',$stagiaire->id) }}" method="post">
                         @csrf
                         @method('PUT')
 

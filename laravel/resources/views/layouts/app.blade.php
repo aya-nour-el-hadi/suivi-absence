@@ -142,45 +142,52 @@ body{
 
 <div class="menu">
 
-    <a href="{{ route('dashboard.index') }}" class="active">
+    <a href="{{ route('admin.dashboard') }}" class="active">
         <i data-lucide="layout-dashboard"></i>
         Dashboard
     </a>
 
-    <a href="{{ route('stagiaire.index') }}">
+    <a href="{{ route('stagiaires.index') }}">
         <i data-lucide="users"></i>
         Stagiaires
     </a>
 
-    <a href="{{ route('stagiaire.create') }}">
+    <a href="{{ route('stagiaires.create') }}">
         <i data-lucide="user-plus"></i>
         Add Stagiaire
     </a>
 
-    <a href="{{ route('absence.index') }}">
+    <a href="{{ route('absences.index') }}">
         <i data-lucide="alert-circle"></i>
         Absences
     </a>
 
-    <a href="{{ route('absence.create') }}">
+    <a href="{{ route('absences.create') }}">
         <i data-lucide="plus-circle"></i>
         Add Absence
     </a>
 
-    <a href="{{ route('sanction.index') }}">
+    <a href="{{ route('sanctions.index') }}">
         <i data-lucide="shield"></i>
         Sanctions
     </a>
 
-    <a href="{{ route('sanction.create') }}">
+    <a href="{{ route('sanctions.create') }}">
         <i data-lucide="file-plus"></i>
         Add Sanction
     </a>
 
-    <a href="{{ route('CEF.index') }}">
+    <a href="{{ route('cefs.index') }}">
     <i data-lucide="building-2"></i>
      CEF
    </a>
+
+@auth
+    <a href="{{ route('logout') }}">
+    <i data-lucide="log-out"></i>
+    Déconextion
+    </a>
+@endauth
 
 </div>
 

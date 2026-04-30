@@ -195,7 +195,7 @@ body {
 
         <div class="p-3">
 
-            <form method="GET" action="{{ route('sanction.index') }}">
+            <form method="GET" action="{{ route('sanctions.index') }}">
 
                 <div class="row g-3">
 
@@ -242,7 +242,7 @@ body {
                         <span>Rechercher</span>
                     </button>
 
-                        <a href="{{ route('sanction.index') }}"
+                        <a href="{{ route('sanctions.index') }}"
                         class="animated-button btn-orange">
                         <i data-lucide="refresh-ccw"></i>
                         <span>Reset</span>
@@ -319,13 +319,13 @@ body {
 
                         <td class="d-flex gap-2">
 
-                            <a href="{{ route('sanction.edit', $s->id) }}"class="animated-button btn-green">
+                            <a href="{{ route('sanctions.edit', $s->id) }}"class="animated-button btn-green">
                                  <i data-lucide="edit-3"></i>
                                 <span>Edit</span>
                             </a>
                             </td>
                          <td>
-                            <form action="{{ route('sanction.destroy', $s->id) }}"
+                            <form action="{{ route('sanctions.destroy', $s->id) }}"
                                   method="POST"
                                   onsubmit="return confirm('Supprimer ?')">
 

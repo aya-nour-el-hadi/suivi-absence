@@ -142,7 +142,7 @@ label{
                         </div>
                     @endif
 
-                    <form action="{{ route('sanction.update',$sanction->id) }}" method="post">
+                    <form action="{{ route('sanctions.update',$sanction->id) }}" method="post">
                         @csrf
                         @method('PUT')
 

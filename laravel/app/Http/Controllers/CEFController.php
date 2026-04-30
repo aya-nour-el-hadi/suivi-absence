@@ -42,6 +42,6 @@ public function update(Cef $cef, CEFRequest $cEFRequest)
     $validate = $cEFRequest->validated();
     $cef->fill($validate)->save();
 
-    return redirect()->route('CEF.index');
+    return redirect()->route('cefs.index');
 }
 }

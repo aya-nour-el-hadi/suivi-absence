@@ -136,12 +136,21 @@ label{
                         </div>
                     @endif
 
-                    <form action="{{ route('absence.update',$absence->id) }}" method="post">
+                    <form action="{{ route('absences.update',$absence->id) }}" method="post">
                         @csrf
                         @method('PUT')
+                        <select name="stagiaire_id"
+                            style="width:100%;padding:10px;margin-bottom:10px;border:1px solid #e5e7eb;border-radius:10px;">
 
+                            @foreach ($stagiaire as $s)
+                                <option value="{{ $s->id }}"
+                                    {{ $absence->stagiaire_id == $s->id ? 'selected' : '' }}>
+                                    {{ $s->Nom }} {{ $s->prénom }}
+                                </option>
+                            @endforeach
 
-
+                        </select>
+                       
                         <input class="input" type="date" name="date"
                                value="{{ $absence->date }}">
 

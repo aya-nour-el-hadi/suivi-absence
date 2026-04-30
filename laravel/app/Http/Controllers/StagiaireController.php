@@ -38,7 +38,7 @@ public function index(Request $request)
       $validate = $request->validated();
       Stagiaire::create($validate);
 
-      return redirect()->route('stagiaire.index')->with('success','ajouter un stagiaire.');
+      return redirect()->route('stagiaires.index')->with('success','ajouter un stagiaire.');
     }
 
     public function edit(Stagiaire $stagiaire)
@@ -51,13 +51,13 @@ public function index(Request $request)
        $validate = $request->validated();
        $stagiaire->fill($validate)->save();
 
-       return redirect()->route('stagiaire.index')->with('success','modifier un stagiaire.');
+       return redirect()->route('stagiaires.index')->with('success','modifier un stagiaire.');
     }
 
     public function destroy(Stagiaire $stagiaire)
     {
       $stagiaire->delete();
 
-      return redirect()->route('stagiaire.index')->with('success','un Stagiaire est supprimer.');
+      return redirect()->route('stagiaires.index')->with('success','un Stagiaire est supprimer.');
     }
 }

@@ -70,7 +70,7 @@
                         </div>
                     @endif
 
-                    <form action="{{ route('absence.store') }}" method="POST">
+                    <form action="{{ route('absences.store') }}" method="POST">
                         @csrf
 
                         <!-- STAGIAIRE -->

@@ -262,7 +262,7 @@ select{
                     </td>
 
                     <td>
-                        <form action="{{ route('CEF.update',$s->id) }}" method="POST" class="d-flex gap-2">
+                        <form action="{{ route('cefs.update',$s->id) }}" method="POST" class="d-flex gap-2">
                             @csrf
                             @method('PUT')
 

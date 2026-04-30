@@ -74,7 +74,7 @@ body {
         </div>
 
         <div style="padding:20px;">
-            <form method="GET" action="{{ route('stagiaire.index') }}">
+            <form method="GET" action="{{ route('stagiaires.index') }}">
                 <div class="row g-3">
 
                     <div class="col-md-4">
@@ -99,7 +99,7 @@ body {
                             <span>Rechercher</span>
                         </button>
 
-                        <a href="{{ route('stagiaire.index') }}" class="animated-button btn-orange">
+                        <a href="{{ route('stagiaires.index') }}" class="animated-button btn-orange">
                             <i data-lucide="refresh-ccw"></i>
                             <span>Reset</span>
                         </a>
@@ -177,7 +177,7 @@ body {
                     <td>{{ $s->group_class }}</td>
 
                     <td>
-                        <a href="{{ route('stagiaire.edit', $s->id) }}"
+                        <a href="{{ route('stagiaires.edit', $s->id) }}"
                            class="animated-button btn-green">
                             <i data-lucide="edit-3"></i>
                             <span>Edit</span>
@@ -185,7 +185,7 @@ body {
                     </td>
 
                     <td>
-                        <form action="{{ route('stagiaire.destroy', $s->id) }}" method="POST" onsubmit="return confirm('supprimer ?')">
+                        <form action="{{ route('stagiaires.destroy', $s->id) }}" method="POST" onsubmit="return confirm('supprimer ?')">
                             @csrf
                             @method('DELETE')
 

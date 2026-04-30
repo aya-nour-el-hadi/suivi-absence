@@ -45,12 +45,13 @@ public function index(Request $request)
        
        Absence::create($validate);
 
-       return redirect()->route('absence.index')->with('success','Ajouter absence.');
+       return redirect()->route('absences.index')->with('success','Ajouter absence.');
     }
 
     public function edit(Absence $absence)
     {
-       return view('absences.edit',compact('absence'));
+        $stagiaire = Stagiaire::all();
+       return view('absences.edit',compact('absence','stagiaire'));
     }
 
     public function update(AbsenceRequest $request , Absence $absence)
@@ -58,13 +59,13 @@ public function index(Request $request)
         $validate = $request->validated();
         $absence->fill($validate)->save();
    
-        return redirect()->route('absence.index')->with('success','Modifier Absence');
+        return redirect()->route('absences.index')->with('success','Modifier Absence');
     }
 
     public function destroy(Absence $absence)
     {
         $absence->delete();
 
-        return redirect()->route('absence.index')->with('success','supprimer cette Absence.');
+        return redirect()->route('absences.index')->with('success','supprimer cette Absence.');
     }
 }

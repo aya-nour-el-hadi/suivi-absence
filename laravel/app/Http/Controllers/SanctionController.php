@@ -44,7 +44,7 @@ public function index(Request $request)
     $validate = $request->validated();
     Sanction::create($validate);
 
-    return redirect()->route('sanction.index')->with('success','Ajouter sanction.');
+    return redirect()->route('sanctions.index')->with('success','Ajouter sanction.');
     }
 
     public function edit(Sanction $sanction)
@@ -60,13 +60,13 @@ public function index(Request $request)
         $validate = $request->validated();
         $sanction->fill($validate)->save();
 
-        return redirect()->route('sanction.index')->with('success','Modifier Sanction.');
+        return redirect()->route('sanctions.index')->with('success','Modifier Sanction.');
 
     }
     public function destroy(Sanction $sanction)
     {
      $sanction->delete();
-     return redirect()->route('sanction.index')->with('success','supprimer sanction.');
+     return redirect()->route('sanctions.index')->with('success','supprimer sanction.');
      
     }
 

@@ -81,7 +81,12 @@ body {
 </head>
 
 <body>
+@if (session('success'))
+<div class="alert alert-success alert-dismissible fade show" role="alert">
+    {{ session('success') }}
 
+</div>
+@endif
 <div class="container d-flex justify-content-center align-items-center vh-100">
 
     <div class="row login-box w-100">
