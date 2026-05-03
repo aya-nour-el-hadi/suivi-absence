@@ -21,9 +21,7 @@ use Illuminate\Support\Facades\Route;
                 }
                 });
 
-                Route::get('/google',function(){
-                    return redirect()->away('https://www.google.com');
-                });
+
                 
 
     Route::middleware(['auth' , 'admin'])->group(function() {
