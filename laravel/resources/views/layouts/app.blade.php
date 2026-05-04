@@ -193,7 +193,44 @@ body{
 
 </div>
 
+
+<style>
+    .success-alert {
+        background: #ecfdf5;
+        color: #065f46;
+        border: 1px solid #a7f3d0;
+        padding: 14px 18px;
+        border-radius: 10px;
+        margin-bottom: 15px;
+        font-size: 14px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    }
+
+    .success-alert .close-btn {
+        background: none;
+        border: none;
+        font-size: 18px;
+        color: #065f46;
+        cursor: pointer;
+        opacity: 0.7;
+        transition: 0.2s;
+    }
+
+    .success-alert .close-btn:hover {
+        opacity: 1;
+    }
+</style>
+
 <div class="content">
+@if (session('success'))
+    <div class="success-alert">
+        <span>{{ session('success') }}</span>
+        <button class="close-btn" onclick="this.parentElement.style.display='none'">&times;</button>
+    </div>
+@endif
     @yield('content')
 </div>
 
