@@ -133,54 +133,78 @@ body{
 
 <div class="sidebar">
 
-    <div class="logo">
-        <div class="logo-box">
-            <i data-lucide="bar-chart-3"></i>
-        </div>
-        Attendance
+<div class="logo">
+    <div class="logo-box">
+        <i data-lucide="layout-dashboard"></i>
     </div>
+
+    <div style="display:flex; flex-direction:column; line-height:1.1">
+        <span style="font-size:15px; font-weight:700; color:#0f172a;">
+            Admin Panel
+        </span>
+        <span style="font-size:11px; color:#64748b;">
+            Attendance System
+        </span>
+    </div>
+</div>
 
 <div class="menu">
 
+@auth
     <a href="{{ route('admin.dashboard') }}" class="active">
         <i data-lucide="layout-dashboard"></i>
         Dashboard
     </a>
+@endauth
 
+@auth
     <a href="{{ route('stagiaires.index') }}">
         <i data-lucide="users"></i>
         Stagiaires
     </a>
+@endauth
 
+@auth
     <a href="{{ route('stagiaires.create') }}">
         <i data-lucide="user-plus"></i>
         Add Stagiaire
     </a>
+@endauth
 
+@auth
     <a href="{{ route('absences.index') }}">
         <i data-lucide="alert-circle"></i>
         Absences
     </a>
+@endauth
 
+@auth
     <a href="{{ route('absences.create') }}">
         <i data-lucide="plus-circle"></i>
         Add Absence
     </a>
+@endauth
 
+@auth
     <a href="{{ route('sanctions.index') }}">
         <i data-lucide="shield"></i>
         Sanctions
     </a>
+@endauth
 
+@auth
     <a href="{{ route('sanctions.create') }}">
         <i data-lucide="file-plus"></i>
         Add Sanction
     </a>
+@endauth
 
+@auth
     <a href="{{ route('cefs.index') }}">
     <i data-lucide="building-2"></i>
-     CEF
-   </a>
+    CEF
+    </a>
+@endauth
 
 @auth
     <a href="{{ route('logout') }}">

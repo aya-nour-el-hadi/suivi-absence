@@ -9,6 +9,11 @@ use Illuminate\Http\Request;
 
 class CEFController extends Controller
 {
+
+public function __construct()
+{
+    $this->middleware('auth');
+}
 public function index()
 {
     $stagiaires = Stagiaire::with(['absences', 'sanctions'])->get();

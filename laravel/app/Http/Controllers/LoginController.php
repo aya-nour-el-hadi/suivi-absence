@@ -7,9 +7,19 @@ use Illuminate\Http\Request;
 
 class LoginController extends Controller
 {
+    public function dashboard()
+    {
+        return view('Login.dashboard');
+    }
+
     public function show()
     {
         return view('Login.show');
+    }
+
+        public function shows()
+    {
+        return view('Login.shows');
     }
 
     public function login(Request $request)
@@ -37,7 +47,7 @@ class LoginController extends Controller
     {
         Auth::logout();
         $request->session()->flush();
-
+        
         return redirect()->route('login.show')->with('success','vous étes bien Déconnecté.');
     }
 }

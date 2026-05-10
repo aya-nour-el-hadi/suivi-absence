@@ -9,6 +9,11 @@ use Illuminate\Http\Request;
 
 class AbsenceController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
 public function index(Request $request)
 {
     $query = Absence::with('stagiaire');
